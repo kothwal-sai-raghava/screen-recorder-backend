@@ -12,12 +12,14 @@ const app = express();
 app.use(express.json());
 
 // CORS for production + local development
-app.use(
-  cors({
-    origin: [process.env.FRONTEND_URL, "http://localhost:5173"],
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://ksr-mern-screen-recorder.netlify.app"
+  ],
+  credentials: true
+}));
+
 
 // Connect database
 connectDB();
